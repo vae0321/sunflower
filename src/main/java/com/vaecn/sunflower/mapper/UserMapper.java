@@ -1,5 +1,6 @@
 package com.vaecn.sunflower.mapper;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.vaecn.sunflower.entity.User;
 import com.vaecn.sunflower.provider.UserSQLProvider;
 import org.apache.ibatis.annotations.Insert;
@@ -9,9 +10,14 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.UpdateProvider;
 
 /**
- * Created by sifan on 2017/8/30.
+ * <p>
+ * Mapper接口
+ * </p>
+ *
+ * @author sifan
+ * @since 2017-09-04
  */
-public interface UserMapper {
+public interface UserMapper extends BaseMapper<User> {
 
     @UpdateProvider(type = UserSQLProvider.class, method = "dynamicCreateUserTableDDL")
     void dynamicCreateTable(String tableName);

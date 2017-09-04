@@ -13,13 +13,12 @@ import lombok.Data;
  * @since 2017-09-04
  */
 @Data
-public class User  extends Model<User> implements Serializable {
+public class Role extends Model<Role> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
 	private Long id;
 	private String name;
-	private Integer age;
 
 	@Override
 	protected Serializable pkVal() {
